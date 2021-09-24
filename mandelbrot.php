@@ -9,16 +9,16 @@ function sqr_complex($c) {
 }
 
 header("Content-Type: image/png");
-$im = imagecreate(512, 512);
+$im = imagecreate(1024, 1024);
 $colors = array(20);
 
 for ($i = 0; $i < 20; $i++) {
 	$fi = (float)$i;
 	$colors[$i] = imagecolorallocate($im, 0, (int) ((($fi*$fi)/2+1)*255)/800, (int)((($fi*$fi)/2+1)*255)/200);
 }
-for ($x = 0; $x < 512; $x++) {
-	for ($y = 0; $y < 512; $y++){
-		$c = array((((float)$x)/512)*4-2.5, (((float)$y)/512)*4-2);
+for ($x = 0; $x < 1024; $x++) {
+	for ($y = 0; $y < 1024; $y++){
+		$c = array((((float)$x)/1024)*4-2.5, (((float)$y)/1024)*4-2);
 		
 		//var_dump($c);
 		$z = array((float)0.0, (float)0.0);
