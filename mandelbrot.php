@@ -8,7 +8,7 @@ function sqr_complex($c) {
 	return array($real, $imaginary);
 }
 
-header("Content-Type: image/png");
+header("Content-Type: image/bmp");
 $im = imagecreate(1024, 1024);
 $colors = array(20);
 
@@ -28,7 +28,7 @@ for ($x = 0; $x < 1024; $x++) {
 			$z[0] = Re($z) + Re($c);
 			$z[1] = Im($z) + Im($c);
 			
-			if (abs(Re($z)) > 2 || abs(Im($z)) > 2) {
+			if (abs(Re($z)+0.5) > 2 || abs(Im($z)) > 2) {
 				imagesetpixel($im, $x, $y, $i);				
 				break;
 			}
